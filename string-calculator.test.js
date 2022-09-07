@@ -19,5 +19,20 @@ describe("String Calculator",function(){
    it("should add two integers if string contains two integers",()=>{
     expect(calculator.add('1,2')).toEqual(3);
    })
+   
+   it("should add all integers the string contains ",()=>{
+    expect(calculator.add('1,2,3,4')).toEqual(10);
+   })
+   
+   it("should add all integers the string contains ",()=>{
+    expect(calculator.add('1,2,3,4,5,10,15,60')).toEqual(100);
+   })
 
+   it("should add all integers the string contains ",()=>{
+    expect(calculator.add('123,110')).toEqual(233);
+   })
+
+   it("should add all integers the string contains ",()=>{
+    expect(calculator.add('145,110,340,230,300')).toEqual(1125);
+   })
 })
