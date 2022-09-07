@@ -16,6 +16,8 @@ describe("String Calculator",function(){
     expect(calculator.add('1')).toEqual(1);
    })
 
-
+   it("should add two integers if string contains two integers",()=>{
+    expect(calculator.add('1,2')).toEqual(3);
+   })
 
 })
