@@ -35,4 +35,8 @@ describe("String Calculator",function(){
    it("should add all integers the string contains ",()=>{
     expect(calculator.add('145,110,340,230,300')).toEqual(1125);
    })
+
+   it("should ignore more than 1000 ",()=>{
+    expect(calculator.add('10,1000')).toEqual(10);
+   })
 })
