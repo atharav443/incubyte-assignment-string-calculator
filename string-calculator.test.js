@@ -39,7 +39,12 @@ describe("String Calculator",function(){
    it("should ignore more than 1000 ",()=>{
     expect(calculator.add('10,1000')).toEqual(10);
    })
-   it("negative ",()=>{
+   it("should output for 1 negative ",()=>{
     expect(calculator.add('10,-1')).toEqual("Negatives not allowed")
    })
+   it("should add alphabets when present in string",()=>{
+      expect(calculator.add("1,a")).toEqual(2)
+      
+     })
+
 })

@@ -6,11 +6,25 @@ function StringCalculator() {
 
 
 StringCalculator.prototype.add = function(string_numbers) {
-  
+    this.number=string_numbers
     if (string_numbers.includes('-')) {
-        return "Negatives not allowed";
+        var res = string_numbers.split(',');
+        const arr=[]
+        for(var i=0;i<string_numbers.length;i++){
+            if(string_numbers[i]<0){
+               arr.push(`${string_numbers[i]}`);
+            }
         }
-    numbers = string_numbers.replace(/(\r\n]\n]\r)/gm,",");
+        
+        if(arr.length >1){
+            return arr
+        }
+        else{
+            return "Negatives not allowed";
+        }
+        
+    }
+    numbers = this.number.replace(/(\r\n]\n]\r)/gm,",");
     if (numbers== '') {
         return 0;
     }
@@ -20,13 +34,19 @@ StringCalculator.prototype.add = function(string_numbers) {
     else {
        var res = numbers.split(',');
         var total = 0;
-        var arrayLength = res.length;
+       
         
         for (var i = 0; i < res.length; i++) {
             
-            if(res[i]<1000){
+        if(res[i]<1000){
+                
             total = total + parseInt( res[i]);
-          }
+        }
+        else if(res[i]>='a' && res[i]<='z'){
+            var index=0;
+            var i=res[i].charCodeAt(index)
+            total=total + (i-96);
+        }
            
         }
          
